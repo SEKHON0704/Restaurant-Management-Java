@@ -1,0 +1,73 @@
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.logging.Level;
+import
+java.util.logging.Logger;
+import javax.swing.JFrame;
+import
+restaurantsystem.component.a
+uth.Login;
+/**
+*
+* @author admin
+*/
+public class Main extends
+JFrame {
+/**
+* @admin args the
+command line arguments
+*/
+public static void
+main(String[] args) {
+// At first, show the login
+page and show menu after -
+// the authentication
+process completed
+
+12
+
+createRequiredFileIfDoesNotE
+xist();
+Login im = new Login();
+im.setDefaultCloseOperation(J
+Frame.EXIT_ON_CLOSE);
+im.setVisible(true);
+}
+private static void
+createRequiredFileIfDoesNotE
+xist()
+{
+String fileNames [];
+File rootDir
+= new
+File("storage");
+rootDir.mkdirs();
+fileNames
+
+= new String []
+
+{"storage/item.txt",
+"storage/labour.txt",
+"storage/order.txt",
+"storage/orderLine.txt"};
+for (String fileName
+:
+
+fileNames)
+{
+File file
+= new
+File(fileName);
+if(!file.exists()) {
+try {
+file.createNewFile(); } catch (IOException
+ex)
+{
+Logger.getLogger(Main.class.
+getName()).log(Level.SEVER
+E, null, ex); } } } }
+
+13
+
+}
